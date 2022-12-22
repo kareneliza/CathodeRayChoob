@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+<script src="jquery-3.6.1.min.js"></script>
+
+    <title>The Cathode Ray Choob</title>
+
+    <style>
+      #inner-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-gap: 0px;
+      }
+
+      #inner-grid>div {
+        padding: 2px;
+      }
+
+      #topleftship {}
+
+      #topmidship {}
+
+      #toprightship {}
+
+      #midleftship {}
+
+      #midmidship {}
+
+      #midrightship {}
+
+      #botleftship {}
+
+      #botmidship {}
+
+      #botrightship {}
+
+      #h1 {
+        font-size: 36px;
+        text-align: center;
+        color: #31006b;
+        font-family: Verdana
+      }
+
+      #h2 {
+        text-align: center;
+        font-family: Arial Narrow;
+        font-size: 26px;
+        color: #333333
+      }
+
+      #h3 {
+        font-family: Verdana;
+        font-size: 21px;
+        color: #003366;
+      }
+
+      p {
+        font-family: Georgia;
+      }
+
+      .emphasized {
+        font-style: italic;
+        font-weight: bold;
+        color: #31006b
+      }
+
+      #sidebarhead {
+        font-family: Arial Narrow;
+        font-size: 16px;
+        font-weight: bold;
+        color: #666666;
+        text-transform: uppercase;
+        letter-spacing: 4px;
+      }
+
+      #sidebartext {
+        font-family: Arial Narrow;
+        font-size: 16px
+      }
+
+      .button {
+        background-color: #31006b;
+        /* Purple */
+        border: none;
+        color: white;
+        padding: 8px 18px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        border-radius: 4px;
+        font-size: 13px;
+        font-family: Verdana;
+        box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.1), 2px 2px 2px 2px rgba(0, 0, 0, 0.1);
+        margin-top: 12px
+      }
+
+      label {
+        font-family: Verdana;
+        font-size: 13px;
+        font-weight: bold;
+      }
+
+      table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+      thead {
+        color: white;
+        background-color: #31006b
+      }
+
+      th,
+      td {
+        text-align: left;
+        padding: 8px;
+        font-family: Arial Narrow;
+        font-size: 16px
+      }
+
+      tr {
+        font-family: Verdana
+      }
+
+      tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+
+      .item-a {
+        grid-area: header;
+      }
+
+      .item-b {
+        grid-area: main;
+      }
+
+      .item-c {
+        grid-area: sidebar;
+        border: 3px solid #d3d3d3;
+        padding-left: 10px;
+        padding-right: 6px;
+      }
+
+      .item-d {
+        grid-area: footer;
+        background-color: #31006b;
+        text-align: center;
+        font-size: 10px;
+        font-family: Verdana;
+        font-weight: bold;
+        color: white;
+        padding: 5px;
+      }
+
+      .item-e {
+        grid-area: sidebar2;
+      }
+
+      .container {
+        display: grid;
+        grid-template-columns: 150px minmax(280px, 1fr) minmax(280px, 1fr) minmax(200px, 1fr);
+        grid-template-rows: auto;
+        grid-template-areas:
+          "header header header header"
+          "sidebar main main sidebar2"
+          ". main main sidebar2"
+          "footer footer footer footer";
+        column-gap: 20px;
+        row-gap: 20px;
+      }
+
+      .topnav {
+        background-color: #31006b;
+        overflow: hidden;
+      }
+
+      .topnav a:hover {
+        background-color: #ddd;
+        color: black;
+      }
+
+      .topnav a.active {
+        background-color: #00c1c0;
+        color: white;
+      }
+
+      .topnav a {
+        float: left;
+        color: #f2f2f2;
+        text-align: center;
+        font-family: Arial Narrow;
+        padding: 6px 10px;
+        text-decoration: none;
+        font-size: 17px;
+      }
+
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="item-a">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/66/SMPTE_Color_Bars.svg" alt="television color test" width=100% height="250" />
+        <div class="topnav">
+          <a class="active" href="#home">Home</a>
+          <a href="#About Me">About Me</a>
+          <a href="#Theme Tunes">Theme Tunes</a>
+          <a href="#Classic Clips">Classic Clips</a>
+          <a href="#Top of the Pops">Top of the Pops</a>
+          <a href="#Classic Ads">Classic Ads</a>
+          <a href="#Music Vids">Music Vids</a>
+          <a href="#Monday Movie">Monday Movie</a>
+        </div>
+        <h1 id="h1">
+          The Cathode Ray Choob
+        </h1>
+        <h2 id="h2">
+          TV and Other Important Stuff
+        </h2>
+      </div>
+      <div class="item-c">
+        <p id="sidebarhead">
+          Help The Choob!
+        </p>
+        <p id="sidebartext">
+          If you find a video on any post that will not play, <strong>please leave a comment or email me at the address below</strong> so I can try to find a replacement. Click <a href="https://thecathoderaychoob.wordpress.com/2009/06/14/the-choob-needs-you/">here</a> for more info. Thanks, from The Choob!
+        </p>
+      </div>
+      <div class="item-b">
+        <article>
+          <h3 id="h3">
+            Top of the Pops: Big Country Live at King Tut's in Glasgow
+          </h3>
+          <p>
+            Hot off the press, here are a few videos I shot during <i>Big Country</i>'s brilliant gig at King Tut’s in Glasgow last night.
+          </p>
+          <p>
+            With original members Bruce Watson, Tony Butler and Mark Brzezicki now joined by <i>The Alarms</i>'s Mike Peters on vocals – taking over from his friend, the late Stuart Adamson – (plus Bruce’s son Jamie on guitar), this is not quite the same as the original <i>Big Country</i> and never will be, given the large shoes Adamson left to fill.
+          </p>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/VmENP_H-zlg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </article>
+        <article>
+          <h3 id="h3">
+            Winter Shows Are Coming
+          </h3>
+          <p>
+            Winter is coming, and with it, new shows and some returning favorites. Which ones are you counting on to get you through the long, cold nights?
+          </p>
+          <form>
+            <input type="checkbox" id="show1" name="shows" value="Willow">
+            <label for="Willow">Willow</label><br>
+            <input type="checkbox" id="show2" name="shows" value="Succession">
+            <label for="Succession">Succession</label><br>
+            <input type="checkbox" id="show3" name="shows" value="Anne Rice's Mayfair Witches">
+            <label for="Anne Rice's Mayfair Witches">Anne Rice's Mayfair Witches</label><br>
+            <input type="checkbox" id="show4" name="shows" value="Star Trek: Picard">
+            <label for="Star Trek: Picard">Star Trek: Picard</label><br>
+            <input type="checkbox" id="show5" name="shows" value="Ahsoka">
+            <label for="Ahsoka">Ahsoka</label><br>
+            <input type="checkbox" id="show6" name="shows" value="The Mandalorian">
+            <label for="The Mandalorian">The Mandalorian</label><br>
+            <input type="checkbox" id="show7" name="shows" value="Snowpiercer">
+            <label for="Snowpiercer">Snowpiercer</label><br>
+            <input type="checkbox" id="show8" name="shows" value="The Umbrella Academy">
+            <label for="The Umbrella Academy">The Umbrella Academy</label><br>
+            <input type="submit" value="submit" class="button" id="submitButton">
+          </form>
+        </article>
+        <article>
+          <h3 id="h3">
+            This Week's Trivia
+          </h3>
+          <p>
+            We're looking for a ship that was commandeered by a group of prisoners and became key to the fight against the Federation. <span class="emphasized">Find that ship!</span>
+          </p>
+          <div id="inner-grid">
+            <div id="topleftship"><img src="https://airandspace.si.edu/sites/default/files/styles/body_medium/public/2021-05/Composite_X-wing.jpg?itok=UwDAgRfB" width="200" height="150"></div>
+            <div id="topmidship"><img src="https://www.belloflostsouls.net/wp-content/uploads/2022/09/rocinante-header.jpg" width="200" height="150"></div>
+            <div id="toprightship"><img src="https://external-preview.redd.it/DOq0oEEbq91031ld0hMdnaNA5bBHJL-Ron7JI9kc8lc.jpg?auto=webp&s=aacf138a0c6fa30a47519d3dff5790bc3635bb55" width="200" height="150"></div>
+            <div id="midleftship"><img src="https://media.comicbook.com/uploads1/2014/10/serenity-replica-11-109630.jpg" width="200" height="150"></div>
+            <div id="midmidship"><img src="https://static.tvtropes.org/pmwiki/pub/images/b5mattersofhonor_4772.jpg" width="200" height="150"></div>
+            <div id="midrightship"><img src="https://tellyspotting.kera.org/wp-content/uploads/2013/08/RedDwarfShip2.jpg" width="200" height="150"></div>
+          </div>
+      </div>
+      <div class="item-e">
+        <table style>
+          <thead>
+            <tr>
+              <th colspan="2" id="sidebarhead" style="color: white">What I'm Watching Now
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Doctor Who</td>
+              <td>Series 12</td>
+            </tr>
+            <tr>
+              <td>The Walking Dead</td>
+              <td>Season 11</td>
+            </tr>
+            <tr>
+              <td>Andor</td>
+              <td>Season 1</td>
+            </tr>
+            <tr>
+              <td>Stargirl</td>
+              <td>Season 3</td>
+            </tr>
+            <tr>
+              <td>Reboot</td>
+              <td>Season 1</td>
+            </tr>
+            <tr>
+              <td>Willow</td>
+              <td>Season 1</td>
+            </tr>
+            <tr>
+              <td>Titans</td>
+              <td>Season 4</td>
+            </tr>
+            <tr>
+              <td>South Park</td>
+              <td>Season 2</td>
+            </tr>
+            <tr>
+              <td>The Good Fight</td>
+              <td>Season 6</td>
+            </tr>
+            <tr>
+              <td>Doctor Who</td>
+              <td>Series 12</td>
+            </tr>
+            <tr>
+              <td>The Walking Dead</td>
+              <td>Season 11</td>
+            </tr>
+            <tr>
+              <td>Andor</td>
+              <td>Season 1</td>
+            </tr>
+            <tr>
+              <td>Stargirl</td>
+              <td>Season 3</td>
+            </tr>
+            <tr>
+              <td>Reboot</td>
+              <td>Season 1</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="item-d">
+        The Cathode Ray Choob · News and Features about TV… and other earth-shatteringly important stuff
+      </div>
+    </div>
+    <script>
+      const btn = document.querySelector("#submitButton");
+      const random = (maxColor) => {
+        return Math.random() * (maxColor - 1) + 1;
+      }
+
+      btn.addEventListener('mouseover', () => {
+        const rndCol = `rgb(${random(255)}, ${random(255)}, ${random(255)})`;
+        btn.style.backgroundColor = rndCol;
+      });
+
+      btn.addEventListener('mouseleave', () => {
+        btn.style.backgroundColor = "#31006b"
+      });
+
+    </script>
+    <script>
+      const sidebar = document.querySelector(".item-c");
+
+      sidebar.addEventListener('mouseover', () => {
+        sidebar.style.borderColor = "#31006b";
+      });
+
+      sidebar.addEventListener('mouseleave', () => {
+        sidebar.style.borderColor = "#d3d3d3"
+      });
+
+    </script>
+    <script>
+      const image = document.querySelector("#topleftship");
+
+      image.addEventListener('click', () => {
+        image.style.opacity = "0.2";
+      });
+
+      image.addEventListener('mouseleave', () => {
+        image.style.opacity = "1"
+      });
+
+    </script>
+    
+
+  <script>
+  $("topleftship").click(function(){
+    $(this).hide();
+    });
+   </script>
+  
+  </body>
+
+</html>
